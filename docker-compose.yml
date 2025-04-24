@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: soundnest
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3310:3306"
+    volumes:
+      - ./01-init.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - ./02-init-data.sql:/docker-entrypoint-initdb.d/02-init-data.sql
+    networks:
+      - soundnet
+    restart: unless-stopped
+    tmpfs:
+      - /var/lib/mysql
+
+networks:
+  soundnet:
+    driver: bridge
