@@ -6,6 +6,14 @@ CREATE TABLE `AppUser` (
   `idRole` int NOT NULL
 );
 
+CREATE TABLE `Photo` (
+  `idPhoto` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `fileName` varchar(100) NOT NULL UNIQUE,
+  `extension` varchar(50) NOT NULL,
+  `createdAt` DATETIME NOT NULL,
+  `idUser` int NOT NULL
+);
+
 CREATE TABLE `Role` (
   `idRole` int PRIMARY KEY AUTO_INCREMENT,
   `roleName` varchar(100) UNIQUE NOT NULL
@@ -14,11 +22,25 @@ CREATE TABLE `Role` (
 CREATE TABLE `Song` (
   `idSong` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `songName` varchar(100) NOT NULL,
-  `filePath` VARCHAR(255) NOT NULL,
+  `fileName` VARCHAR(255) UNIQUE NOT NULL,
   `durationSeconds` int NOT NULL,
   `releaseDate` DATETIME NOT NULL,
   `idSongGenre` int NOT NULL,
+  `idSongExtension` int NOT NULL,
   `idAppUser` int NOT NULL
+);
+
+CREATE TABLE `SongPhoto` (
+  `idSongPhoto` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `fileName` varchar(100) UNIQUE NOT NULL,
+  `extension` varchar(50) NOT NULL,
+  `createdAt` DATETIME NOT NULL,
+  `idSong` int NOT NULL
+);
+
+CREATE TABLE `SongExtension` (
+  `idSongExtension` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `extensionName` varchar(70) UNIQUE NOT NULL
 );
 
 CREATE TABLE `Visualization` (
@@ -35,8 +57,14 @@ CREATE TABLE `SongGenre` (
 
 ALTER TABLE `AppUser` ADD FOREIGN KEY (`idRole`) REFERENCES `Role` (`idRole`);
 
+ALTER TABLE `Photo` ADD FOREIGN KEY (`idUser`) REFERENCES `AppUser` (`idUser`);
+
 ALTER TABLE `Song` ADD FOREIGN KEY (`idSongGenre`) REFERENCES `SongGenre` (`idSongGenre`);
 
+ALTER TABLE `Song` ADD FOREIGN KEY (`idSongExtension`) REFERENCES `SongExtension` (`idSongExtension`);
+
 ALTER TABLE `Song` ADD FOREIGN KEY (`idAppUser`) REFERENCES `AppUser` (`idUser`);
+
+ALTER TABLE `SongPhoto` ADD FOREIGN KEY (`idSong`) REFERENCES `Song` (`idSong`);
 
 ALTER TABLE `Visualization` ADD FOREIGN KEY (`idSong`) REFERENCES `Song` (`idSong`);

@@ -4,8 +4,5 @@ docker-compose up -d
 docker-compose down -v
 
 
-docker build -t mi-mysql-aprovisionado:1.0 .
+docker buildx build --platform linux/amd64,linux/arm64 -t navidocky/soundnest-mysql:latest --push .
 
-docker tag mi-mysql-aprovisionado:1.0 navidocky/soundnest-mysql:latest
-
-docker push navidocky/soundnest-mysql:latest

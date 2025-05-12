@@ -40,3 +40,7 @@ INSERT INTO SongGenre (genreName) VALUES
 ('Punk'),
 ('Alternative'),
 ('Lo-fi');
+
+INSERT INTO SongExtension (extensionName) VALUES
+('mp3'),
+('wav');
