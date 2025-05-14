@@ -25,6 +25,7 @@ CREATE TABLE `Song` (
   `fileName` VARCHAR(255) UNIQUE NOT NULL,
   `durationSeconds` int NOT NULL,
   `releaseDate` DATETIME NOT NULL,
+  `isDeleted` boolean NOT NULL,
   `idSongGenre` int NOT NULL,
   `idSongExtension` int NOT NULL,
   `idAppUser` int NOT NULL

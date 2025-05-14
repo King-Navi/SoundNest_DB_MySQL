@@ -48,16 +48,54 @@ INSERT INTO Song (
   fileName,
   durationSeconds,
   releaseDate,
+  isDeleted,
   idSongGenre,
   idSongExtension,
   idAppUser
 )
 VALUES (
-  'Canción de Prueba',
-  'cancion_prueba.mp3',
-  180, -- duración en segundos
+  'Old Rules by Lipa Dua', -- Song name
+  's1', -- filename
+  209, -- duración en segundos
   NOW(), -- fecha de lanzamiento
+  false,
   1, -- id del género (asegúrate que coincida)
+  1, -- id de la extensión (asegúrate que coincida)
+  1  -- id del usuario (asegúrate que coincida)
+),(
+  'IAM by Trueno 2',
+  's2', -- filename
+  184, -- duración en segundos
+  NOW(), -- fecha de lanzamiento
+  false,
+  6, -- id del género (asegúrate que coincida)
+  1, -- id de la extensión (asegúrate que coincida)
+  1  -- id del usuario (asegúrate que coincida)
+),(
+  'Ear of the tiger by Remaining person',
+  's3', -- filename
+  292, -- duración en segundos
+  NOW(), -- fecha de lanzamiento
+  false,
+  2, -- id del género (asegúrate que coincida)
+  1, -- id de la extensión (asegúrate que coincida)
+  1  -- id del usuario (asegúrate que coincida)
+),(
+  'I Surivive by Victoria Gano',
+  's4', -- filename
+  194, -- duración en segundos
+  NOW(), -- fecha de lanzamiento
+  false,
+  1, -- id del género (asegúrate que coincida)
+  1, -- id de la extensión (asegúrate que coincida)
+  2  -- id del usuario (asegúrate que coincida)
+),(
+  'amazed by ABCD',
+  's5', -- filename
+  244, -- duración en segundos
+  NOW(), -- fecha de lanzamiento
+  false,
+  2, -- id del género (asegúrate que coincida)
   1, -- id de la extensión (asegúrate que coincida)
   2  -- id del usuario (asegúrate que coincida)
 );
