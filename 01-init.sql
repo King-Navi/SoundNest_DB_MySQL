@@ -1,10 +1,16 @@
+CREATE DATABASE IF NOT EXISTS soundnest
+  DEFAULT CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+
+USE soundnest;
+
 CREATE TABLE `AppUser` (
   `idUser` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `nameUser` varchar(100) UNIQUE NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(100) UNIQUE NOT NULL,
   `idRole` int NOT NULL
-);
+)CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE `Photo` (
   `idPhoto` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -12,12 +18,12 @@ CREATE TABLE `Photo` (
   `extension` varchar(50) NOT NULL,
   `createdAt` DATETIME NOT NULL,
   `idUser` int NOT NULL
-);
+)CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE `Role` (
   `idRole` int PRIMARY KEY AUTO_INCREMENT,
   `roleName` varchar(100) UNIQUE NOT NULL
-);
+)CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE `Song` (
   `idSong` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -29,7 +35,7 @@ CREATE TABLE `Song` (
   `idSongGenre` int NOT NULL,
   `idSongExtension` int NOT NULL,
   `idAppUser` int NOT NULL
-);
+)CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE `SongPhoto` (
   `idSongPhoto` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -37,24 +43,26 @@ CREATE TABLE `SongPhoto` (
   `extension` varchar(50) NOT NULL,
   `createdAt` DATETIME NOT NULL,
   `idSong` int NOT NULL
-);
+)CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE `SongExtension` (
   `idSongExtension` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `extensionName` varchar(70) UNIQUE NOT NULL
-);
+)CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE `Visualization` (
   `idVisualizations` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `playCount` int NOT NULL,
   `period` DATE NOT NULL,
   `idSong` int NOT NULL
-);
+)CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE `SongGenre` (
   `idSongGenre` int PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `genreName` VARCHAR(100)
-);
+)CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- Foreign keys
 
 ALTER TABLE `AppUser` ADD FOREIGN KEY (`idRole`) REFERENCES `Role` (`idRole`);
 

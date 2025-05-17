@@ -1,8 +1,13 @@
+ALTER DATABASE soundnest CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+
 INSERT INTO `Role` (`roleName`) VALUES ('listener'), ('moderator');
+
+SET NAMES utf8mb4;
 
 INSERT INTO soundnest.AppUser (nameUser, password, email, idRole)
 VALUES ('unaay20', '$2a$12$JBU0e5bDpDjdhNipE.k.a.hIXReLMe3qcuJ0h3GJZGNvlVi7DlGti', 'unaayjose@gmail.com', '2'),
-('1', '$2a$10$4EhEyAirIGdY.FShS0LX0.rvuMn5IdJYeKoClVMWSVlFVexBkZyY6', 'zs22013698@estudiantes.uv.mx', '1'),
+('1', '$2a$10$4EhEyAirIGdY.FShS0LX0.rvuMn5IdJYeKoClVMWSVlFVexBkZyY6', 'zs22013698peppegriññp@estudiantes.uv.mx', '1'),
 ('2', '$2a$10$SoDa1adqsa1wT7VDNmJ7o.EfTsjB2xSsIMolrEItNmR8gIBzvlP/i', 'zs22013698aa@estudiantes.uv.mx', '2')
 ;
 
@@ -64,38 +69,52 @@ VALUES (
   1  -- id del usuario (asegúrate que coincida)
 ),(
   'IAM by Trueno 2',
-  's2', -- filename
-  184, -- duración en segundos
-  NOW(), -- fecha de lanzamiento
+  's2', 
+  184, 
+  NOW(), 
   false,
-  6, -- id del género (asegúrate que coincida)
-  1, -- id de la extensión (asegúrate que coincida)
-  1  -- id del usuario (asegúrate que coincida)
+  6, 
+  1, 
+  1  
 ),(
   'Ear of the tiger by Remaining person',
-  's3', -- filename
-  292, -- duración en segundos
-  NOW(), -- fecha de lanzamiento
+  's3', 
+  292, 
+  NOW(), 
   false,
-  2, -- id del género (asegúrate que coincida)
-  1, -- id de la extensión (asegúrate que coincida)
-  1  -- id del usuario (asegúrate que coincida)
+  2, 
+  1, 
+  1 
 ),(
   'I Surivive by Victoria Gano',
-  's4', -- filename
-  194, -- duración en segundos
-  NOW(), -- fecha de lanzamiento
+  's4', 
+  194, 
+  NOW(), 
   false,
-  1, -- id del género (asegúrate que coincida)
-  1, -- id de la extensión (asegúrate que coincida)
-  2  -- id del usuario (asegúrate que coincida)
+  1,
+  1, 
+  2  
 ),(
   'amazed by ABCD',
-  's5', -- filename
-  244, -- duración en segundos
-  NOW(), -- fecha de lanzamiento
+  's5', 
+  244, 
+  NOW(), 
   false,
-  2, -- id del género (asegúrate que coincida)
-  1, -- id de la extensión (asegúrate que coincida)
-  2  -- id del usuario (asegúrate que coincida)
+  2, 
+  1, 
+  2  
+);
+
+INSERT INTO SongPhoto (
+  fileName, extension, createdAt, idSong
+)
+VALUES (
+  'song-1', 'jpg', NOW(), 1
+);
+
+INSERT INTO SongPhoto (
+  fileName, extension, createdAt, idSong
+)
+VALUES (
+  'song-2', 'jpg', NOW(), 2
 );
