@@ -6,12 +6,12 @@ INSERT INTO `Role` (`roleName`) VALUES ('listener'), ('moderator');
 SET NAMES utf8mb4;
 
 INSERT INTO soundnest.AppUser (nameUser, password, email, idRole)
-VALUES ('unaay20', '$2a$12$JBU0e5bDpDjdhNipE.k.a.hIXReLMe3qcuJ0h3GJZGNvlVi7DlGti', 'unaayjose@gmail.com', '2'),
-('navi_simple', '$2a$10$4EhEyAirIGdY.FShS0LX0.rvuMn5IdJYeKoClVMWSVlFVexBkZyY6', 'zs22013698peppegriññp@estudiantes.uv.mx', '1'),
-('navi_mod', '$2a$10$SoDa1adqsa1wT7VDNmJ7o.EfTsjB2xSsIMolrEItNmR8gIBzvlP/i', 'zs22013698@estudiantes.uv.mx', '2'),
-('lipa_dua', '$2a$10$N78WqXKH6eqXOiipGqqJJ.jnDZJSNztl3sTq8/55o6zNqVbSUme5q', 'lipadua@estudiantes.uv.mx', '1'),
-('ow', '$2a$10$Q3La7PirtltGkKmMb6t4cu5dP5HxltE9MOYXOHcQotQxOLcy.PYuG', 'ow@estudiantes.uv.mx', '1'),
-('nc_lion', '$2a$10$spjY29QvOAetlG38kgGjuuAqj4p15GjlMGtLjkFnx4xAEwD3g/v9u', 'nc_lion@estudiantes.uv.mx', '1')
+VALUES ('unaay20', '$2a$10$OUA4QxT7HMBF2D3edJz4m.i9epy/hlbnRTEnb4KENecqZUJ0iJPWK', 'unaayjose@gmail.com', '2'),
+('navi_simple', '$2a$10$GhCj8qDJBsJBtQg3Y1Uv0.lsxyuqK.zYL3M5fntajqFhm4K5JwSie', 'zs22013698peppegriññp@estudiantes.uv.mx', '1'),
+('navi_mod', '$2a$10$ih.nRDcDzXwO2WKTOymB0.fXHU7J1L98zwf3smw8o0Nh6/L0oIjg2', 'zs22013698@estudiantes.uv.mx', '2'),
+('lipa_dua', '$2a$10$jmWmlIjqLdkGscvFgAKYNuolZMc3HddEkY.MLuMCi.j85HX6V1u9.', 'lipadua@estudiantes.uv.mx', '1'),
+('ow', '$2a$10$JpVZSOQyjoUx3DvSbyMOUOgD6R0.wpz5ao.6uIFKvDKAElZwTgYgy', 'ow@estudiantes.uv.mx', '1'),
+('nc_lion', '$2a$10$AGQamw9IhFbYXmVxaXXZ5etpDpQGkKSXL5B4zgEg6a.Z1foUe8dMy', 'nc_lion@estudiantes.uv.mx', '1')
 ;
 
 INSERT INTO SongGenre (genreName) VALUES
@@ -65,7 +65,6 @@ VALUES
 ('Neon Rebellion', 's10', 160, NOW(), false, 19, 1, 6),
 ('Digital Ghost', 's11', 87, NOW(), false, 16, 1, 6),
 ('Chrome Blood', 's12', 160, NOW(), false, 15, 1, 6),
-
 ('venice-beach', 's13', 194, NOW(), false, 15, 1, 4),
 ('background', 's14', 154, NOW(), false, 3, 1, 5),
 ('we made it', 's15', 162, NOW(), false, 4, 1, 6),
